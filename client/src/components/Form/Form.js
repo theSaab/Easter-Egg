@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import useStyles from './styles';
-import { createPost } from '../../actions/posts';
+import { createPost, updatePost } from '../../actions/posts';
 
-const Form = () => {
-    const classes = useStyles();
-    const dispatch = useDispatch();
+const Form = ({ currentId, setCurrentId }) => {
 
     const [postData, setPostData] = useState({
         creator: '',
@@ -18,21 +16,41 @@ const Form = () => {
         selectedFile: ''
     })
 
+    const classes = useStyles();
+    const dispatch = useDispatch();
+    const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
+
+    useEffect(() => {
+        if (post) setPostData(post);
+    }, [post]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        dispatch(createPost(postData));
+        if (currentId){
+            dispatch(updatePost(currentId, postData));
+        } else {
+            dispatch(createPost(postData));
+        }
+        clear();
     }
 
     const clear = () => {
-
+        setCurrentId(null)
+        setPostData({
+            creator: '',
+            title: '',
+            message: '',
+            tags: '',
+            selectedFile: ''
+        })
     }
 
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
 
-                <Typography variant="h6">Creating and Egg</Typography>
+                <Typography variant="h6">{currentId ? "Editing" : "Creating"} an Egg</Typography>
 
                 <TextField
                     name="creator"
@@ -57,6 +75,7 @@ const Form = () => {
                     variant="outlined"
                     label="Message"
                     fullWidth
+                    multiline rows={4}
                     value={postData.message}
                     onChange={(e) => setPostData({ ...postData, message: e.target.value })}
                 />
@@ -80,8 +99,8 @@ const Form = () => {
                     </FileBase>
                 </div>
 
-                <Button className={classes.buttonSubmit} variant="contained" type="submit" color="primary" size="large" fullWidth>Submit</Button>
-                <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+                <Button className={classes.button} variant="contained" type="submit" color="primary" size="large" fullWidth>Submit</Button>
+                <Button variant="contained" className={classes.button} color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
 
             </form>
         </Paper>
