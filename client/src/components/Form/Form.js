@@ -24,17 +24,6 @@ const Form = ({ currentId, setCurrentId }) => {
         if (post) setPostData(post);
     }, [post]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        if (currentId){
-            dispatch(updatePost(currentId, postData));
-        } else {
-            dispatch(createPost(postData));
-        }
-        clear();
-    }
-
     const clear = () => {
         setCurrentId(null)
         setPostData({
@@ -44,6 +33,17 @@ const Form = ({ currentId, setCurrentId }) => {
             tags: '',
             selectedFile: ''
         })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (currentId){
+            dispatch(updatePost(currentId, postData));
+        } else {
+            dispatch(createPost(postData));
+        }
+        clear();
     }
 
     return (
@@ -99,7 +99,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     </FileBase>
                 </div>
 
-                <Button className={classes.button} variant="contained" type="submit" color="primary" size="large" fullWidth>Submit</Button>
+                <Button disabled={!postData.tags||!postData.title||!postData.message||!postData.creator} className={classes.button} variant="contained" type="submit" color="primary" size="large" fullWidth>Submit</Button>
                 <Button variant="contained" className={classes.button} color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
 
             </form>

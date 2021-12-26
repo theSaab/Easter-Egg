@@ -9,7 +9,7 @@ import useStyles from './styles'
 import egg from './images/egg.png';
 
 const App = () => {
-    const [currentId, setCurrentId] = useState(null);
+    const [currentId, setCurrentId] = useState(0);
     const classes = useStyles();
     const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ const App = () => {
             </AppBar>
             <Grow in>
                 <Container>
-                    <Grid container alignItems="stretch" spacing={3}>
+                    <Grid container className={classes.mainContainer} justifyContent="space-between" alignItems="stretch" spacing={3}>
                         <Grid item xs={12} sm={7}>
                             <Posts setCurrentId={setCurrentId} />
                         </Grid>
