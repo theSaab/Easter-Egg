@@ -18,6 +18,7 @@ app.use('/posts', postRoutes);
 app.get('/', (req, res) => {
     res.send('Hello to the Eggverse');
 });
+test
 
 // MONGO DB backend
 // const CONNECTION_URL = 'mongodb+srv://saba:sabafathi1234@cluster0.bpria.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
