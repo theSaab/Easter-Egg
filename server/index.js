@@ -20,7 +20,6 @@ app.get('/', (req, res) => {
 });
 
 // MONGO DB backend
-// const CONNECTION_URL = 'mongodb+srv://saba:sabafathi1234@cluster0.bpria.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
