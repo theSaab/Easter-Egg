@@ -1,16 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Grid, CircularProgress } from '@material-ui/core'
-
+import _ from 'lodash';
 import Post from './Post/Post';
 import useStyles from './styles'
 
 const Posts = ({ setCurrentId }) => {
     const posts = useSelector((state) => state.posts);
+    // const posts = [];
     const classes = useStyles();
-
+// debugger
+    console.log("posts");
     console.log(posts);
-    console.log("post");
 
     return (
         !posts.length ? < CircularProgress component="img"/> : (

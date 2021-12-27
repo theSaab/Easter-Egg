@@ -4,7 +4,7 @@ import FileBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
 
 import useStyles from './styles';
-import { createPost, updatePost } from '../../actions/posts';
+import { createPost, getPosts, updatePost } from '../../actions/posts';
 
 const Form = ({ currentId, setCurrentId }) => {
 
@@ -25,7 +25,7 @@ const Form = ({ currentId, setCurrentId }) => {
     }, [post]);
 
     const clear = () => {
-        setCurrentId(null)
+        setCurrentId(0)
         setPostData({
             creator: '',
             title: '',
@@ -33,6 +33,7 @@ const Form = ({ currentId, setCurrentId }) => {
             tags: '',
             selectedFile: ''
         })
+        getPosts();
     }
 
     const handleSubmit = (e) => {
@@ -45,7 +46,7 @@ const Form = ({ currentId, setCurrentId }) => {
         }
         clear();
     }
-
+    console.log(postData);
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
@@ -83,10 +84,13 @@ const Form = ({ currentId, setCurrentId }) => {
                 <TextField
                     name="tags"
                     variant="outlined"
-                    label="Tags"
+                    label="Tags (comma seperated)"
                     fullWidth
                     value={postData.tags}
-                    onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
+                    onChange={(e) => {
+                        console.log(e.target.value);
+                        setPostData({ ...postData, tags: e.target.value })}
+                    }
                 />
 
                 <div className={classes.fileInput}>
