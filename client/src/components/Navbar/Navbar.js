@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Button, Toolbar, AppBar, Avatar, Typography } from '@material-ui/core';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import decode from 'jwt-decode';
 
-import { LOGOUT } from '../../constants/actionTypes';
+import * as actionType from '../../constants/actionTypes';
 import useStyles from './styles';
 
 import egg from '../../images/egg.png';
@@ -16,17 +17,20 @@ const Navbar = () => {
     const location = useLocation();
 
     const logout = () => {
-        dispatch({ type: LOGOUT });
-        navigate("/");
+        dispatch({ type: actionType.LOGOUT });
+        navigate("/auth");
 
         setUser(null);
     }
 
-    console.log(user);
-
     useEffect(() => {
         const token = user?.token;
 
+        if (token) {
+            const decodedToken = decode(token);
+
+            if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+        }
         setUser(JSON.parse(localStorage.getItem('profile')));
     }, [location]);
 

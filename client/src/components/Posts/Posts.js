@@ -8,7 +8,6 @@ const Posts = ({ setCurrentId }) => {
     const posts = useSelector((state) => state.posts);
     // const posts = [];
     const classes = useStyles();
-// debugger
     console.log("posts");
     console.log(posts);
 
