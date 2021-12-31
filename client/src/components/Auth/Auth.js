@@ -62,6 +62,8 @@ const Auth = () => {
         console.log("Google sign in was unsuccessful, try again later");
     }
 
+    const googleError = () => console.log('Google Sign In was unsuccessful. Try again later');
+
     return (
         <Container component="main" maxWidth="xs">
             <Paper className={classes.paper} elevation={3}>
@@ -105,7 +107,7 @@ const Auth = () => {
                             </Button>
                         )}
                         onSuccess={googleSuccess}
-                        onFailure={googleFailure}
+                        onFailure={googleError}
                         cookiePolicy="single_host_origin"
                     />
                     <Grid container justifyContent="flex-end">
