@@ -10,11 +10,11 @@ The home page features a navbar that allows for the user to log in or sign up. I
 
 ![home](./images/homePage.jpg)
 
+The Eggverse app also features pagination, which limits the number of posts on the screen to 8, users can iterate through pages to look at various posts.
+
 On the right side of the page users are able to search for specific posts. Users with an account will be able to create posts using the form.
 
 ![login](./images/forms.jpg)
-
-The Eggverse app also features pagination, which limits the number of posts on the screen to 8, users can iterate through pages to look at various posts.
 
 ### Login and Sign Up
 
