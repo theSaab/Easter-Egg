@@ -5,8 +5,10 @@ This is a website to post easter eggs found in video games. Using React, Redux, 
 
 
 ### Home Page
- 
+
 The home page features a navbar that allows for the user to log in or sign up. In the center of the page all available posts are presented to the user.
+
+![plot](./images/homePage.jpg)
 
 On the right side of the page users are able to search for specific posts. Users with an account will be able to create posts using the form, which allows for a post title, small description, and some tags for social media purposes, they can also upload a picture that will be presented in the post.
 
