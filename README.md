@@ -27,6 +27,8 @@ The web app contains an OAuth implementation that lets users create an account t
 
 ![login](./images/signUpPage.jpg)
 
+![login](./images/forms.jpg)
+
 
 Users that are logged in gain access to a few more features. They are able to create their own posts, like other peoples posts, and can edit or delete posts they have created.
 
