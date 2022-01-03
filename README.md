@@ -30,12 +30,12 @@ Users that are logged in gain access to a few more features. They are able to cr
 
 By using the form on the right, users can create and edit posts. The form uses a post title, small description, and some tags for social media purposes, they can also upload a picture that will be presented in the post.
 
-![login](./images/createPost.jpg)
-
-![login](./images/post.jpg)
-
 ![login](./images/postAndForm.jpg)
 
 ### Posts
 
 The posts presented on the home screen can be clicked on to view a single page version of the posts, which allows users to view the attached image in better quality and read the description the creator has provided.
+
+![login](./images/bioshockDetail.jpg)
+
+![login](./images/minecraftBorderlands.jpg)
