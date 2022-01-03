@@ -17,4 +17,7 @@ export default makeStyles((theme) => ({
       flexDirection: 'column-reverse',
     },
   },
+  searchButton: {
+    paddingTop: '12px',
+  }
 }));
