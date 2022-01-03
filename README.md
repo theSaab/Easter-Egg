@@ -32,6 +32,9 @@ By using the form on the right, users can create and edit posts. The form uses a
 
 ![login](./images/createPost.jpg)
 
+![login](./images/post.jpg)
+
+![login](./images/postAndForm.jpg)
 
 ### Posts
 
