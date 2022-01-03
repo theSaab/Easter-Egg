@@ -11,4 +11,8 @@ export default makeStyles((theme) => ({
   actionDiv: {
     textAlign: 'center',
   },
+  paper: {
+    backgroundColor: '#f7ebe8',
+    textAlign: 'center',
+  }
 }));
