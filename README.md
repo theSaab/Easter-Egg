@@ -10,7 +10,7 @@ The home page features a navbar that allows for the user to log in or sign up. I
 
 ![home](./images/homePage.jpg)
 
-On the right side of the page users are able to search for specific posts. Users with an account will be able to create posts using the form, which allows for a post title, small description, and some tags for social media purposes, they can also upload a picture that will be presented in the post.
+On the right side of the page users are able to search for specific posts. Users with an account will be able to create posts using the form.
 
 ![login](./images/forms.jpg)
 
@@ -24,9 +24,14 @@ The web app contains an OAuth implementation that lets users create an account t
 
 ![login](./images/signUpPage.jpg)
 
-
-
 Users that are logged in gain access to a few more features. They are able to create their own posts, like other peoples posts, and can edit or delete posts they have created.
+
+### Create and Edit Posts
+
+By using the form on the right, users can create and edit posts. The form uses a post title, small description, and some tags for social media purposes, they can also upload a picture that will be presented in the post.
+
+![login](./images/createPost.jpg)
+
 
 ### Posts
 
