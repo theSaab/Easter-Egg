@@ -8,7 +8,6 @@ import { getPost, getPostsBySearch } from '../../actions/posts';
 import useStyles from './styles';
 
 const PostDetails = () => {
-    console.log("Post Details");
     const { post, posts, isLoading } = useSelector((state) => state.posts);
     const dispatch = useDispatch();
     const navigate = useNavigate();

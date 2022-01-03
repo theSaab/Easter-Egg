@@ -1,6 +1,6 @@
 import React from 'react';
 import useStyles from './styles'
-import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
@@ -16,7 +16,6 @@ const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
     const user = JSON.parse(localStorage.getItem('profile'));
 
     const openPost = () => {
@@ -38,6 +37,10 @@ const Post = ({ post, setCurrentId }) => {
 
     return (
         <Card className={classes.card} raised elevation={6}>
+            {/* <ButtonBase
+                className={classes.cardAction}
+                onClick={openPost}
+            > */}
             <CardMedia style={{ cursor: 'pointer' }} onClick={openPost} className={classes.media} image={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={post.title} />
 
             <div className={classes.overlay}>
@@ -63,7 +66,7 @@ const Post = ({ post, setCurrentId }) => {
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
             </CardContent>
-
+            {/* </ButtonBase> */}
             <CardActions className={classes.cardActions}>
 
                 <Button size="small" disabled={!user?.result} color="primary" onClick={() => {dispatch(likePost(post._id))}}>
