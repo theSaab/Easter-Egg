@@ -7,6 +7,9 @@ export default makeStyles({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     backgroundBlendMode: 'darken',
   },
+  message: {
+    color: '#33658a',
+  },
   border: {
     border: 'solid',
   },
@@ -17,9 +20,11 @@ export default makeStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    borderRadius: '15px',
+    borderRadius: '10px',
     height: '100%',
     position: 'relative',
+    backgroundColor: '#f7ebe8',
+    color: '#201a23',
   },
   overlay: {
     position: 'absolute',
@@ -39,14 +44,22 @@ export default makeStyles({
   details: {
     display: 'flex',
     justifyContent: 'space-between',
+    color: '#33658a',
     margin: '20px',
   },
   title: {
     padding: '0 16px',
+    color: '#33658a',
   },
   cardActions: {
     padding: '0 16px 8px 16px',
     display: 'flex',
     justifyContent: 'space-between',
   },
+  likeButton: {
+    color: '#33658a',
+  },
+  deleteButton: {
+    color: '#33658a',
+  }
 });

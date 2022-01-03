@@ -58,22 +58,22 @@ const Post = ({ post, setCurrentId }) => {
             </div>
 
             <div className={classes.details}>
-                <Typography variant="body2" component="h2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
+                <Typography variant="body2" component="h2" >{post.tags.map((tag) => `#${tag} `)}</Typography>
             </div>
 
             <Typography variant="h5" className={classes.title} component="h2" gutterBottom>{post.title}</Typography>
 
             <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
+                <Typography variant="body2" className={classes.message} component="p">{post.message}</Typography>
             </CardContent>
             {/* </ButtonBase> */}
             <CardActions className={classes.cardActions}>
 
-                <Button size="small" disabled={!user?.result} color="primary" onClick={() => {dispatch(likePost(post._id))}}>
+                <Button size="small" disabled={!user?.result} className={classes.likeButton} onClick={() => {dispatch(likePost(post._id))}}>
                     <Likes />
                 </Button>
                 {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
-                    <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))}>
+                    <Button size="small" className={classes.deleteButton} onClick={() => dispatch(deletePost(post._id))}>
                         <DeleteIcon fontSize="small" />
                         Delete
                     </Button>

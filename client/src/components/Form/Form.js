@@ -65,7 +65,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <Paper className={classes.paper} elevation={6}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
 
-                <Typography variant="h6">{currentId ? "Editing" : "Creating"} an Egg</Typography>
+                <Typography variant="h6">{currentId ? "Editing" : "Create"} an Egg</Typography>
 
                 <TextField
                     name="title"
@@ -108,8 +108,8 @@ const Form = ({ currentId, setCurrentId }) => {
                     </FileBase>
                 </div>
 
-                <Button disabled={!postData.tags||!postData.title||!postData.message} className={classes.button} variant="contained" type="submit" color="primary" size="large" fullWidth>Submit</Button>
-                <Button variant="contained" className={classes.button} color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+                <Button disabled={!postData.tags||!postData.title||!postData.message} className={classes.submitButton} variant="contained" type="submit" color="primary" size="large" fullWidth>Submit</Button>
+                <Button variant="contained" className={classes.clearButton} size="small" onClick={clear} fullWidth>Clear</Button>
 
             </form>
         </Paper>

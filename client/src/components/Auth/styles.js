@@ -6,6 +6,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    backgroundColor: '#f7ebe8',
     padding: theme.spacing(2),
   },
   root: {
@@ -23,8 +24,11 @@ export default makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: '#7189ff',
+    color: 'white',
   },
   googleButton: {
+    backgroundColor: '#7189ff',
     marginBottom: theme.spacing(2),
   },
 }));

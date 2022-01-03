@@ -58,19 +58,19 @@ const Home = () => {
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}>
                     <AppBar className={classes.appBarSearch} position='static' color="inherit">
-                    <TextField name="search" style={{ marginBottom: '8px' }} variant="outlined" label="Search Memories" onKeyPress={handleKeyPress}
-                        fullWidth value={search} onChange={(e) => {setSearch(e.target.value)}}/>
+                        <TextField name="search" style={{ marginBottom: '8px' }} variant="outlined" label="Search Easter Eggs" onKeyPress={handleKeyPress}
+                            fullWidth value={search} onChange={(e) => {setSearch(e.target.value)}}/>
 
-                        {/* <TextField
-                            style={{ margin: '10px 0'}}
-                            value={tags}
-                            onAdd={handleAdd}
-                            onDelete={handleDelete}
-                            label="Search tags"
-                            variant="outlined"
-                        /> */}
+                            {/* <TextField
+                                style={{ margin: '10px 0'}}
+                                value={tags}
+                                onAdd={handleAdd}
+                                onDelete={handleDelete}
+                                label="Search tags"
+                                variant="outlined"
+                            /> */}
 
-                        <Button onClick={searchPost} className={classes.searchButon} variant="contained" color="primary">Search</Button>
+                        <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>
                     </AppBar>
                     <Form currentId={currentId} setCurrentId={setCurrentId} />
                     {(!searchQuery && !tags.length) && (
