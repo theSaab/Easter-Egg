@@ -1,5 +1,11 @@
 import { FETCH_POST, FETCH_ALL, FETCH_BY_SEARCH, CREATE, UPDATE, DELETE, START_LOADING, END_LOADING } from '../constants/actionTypes';
 
+/**
+ * A reducer is a function that determines changes to an application's state.
+ * It uses the action it receives to determine this change.
+ * Redux helps manage an application's state changes in a single store so that they behave consistently.
+ */
+
 export default (state = { isLoading: true, posts: []}, action) => {
     switch (action.type) {
         case START_LOADING:
